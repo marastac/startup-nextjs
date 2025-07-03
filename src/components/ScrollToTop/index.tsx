@@ -1,3 +1,6 @@
+// src/components/ScrollToTop/index.tsx
+"use client"; // ¡Añadida esta línea para que funcione con useEffect y useState!
+
 import { useEffect, useState } from "react";
 
 export default function ScrollToTop() {

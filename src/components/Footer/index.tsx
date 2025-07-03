@@ -1,43 +1,56 @@
+// src/components/Footer/index.tsx
 "use client";
 import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear(); // Obtiene el año actual
+
   return (
     <>
       <footer className="relative z-10 bg-white pt-16 dark:bg-gray-dark md:pt-20 lg:pt-24">
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
+            {/* Columna de Logo y Descripción */}
             <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-5/12">
               <div className="mb-12 max-w-[360px] lg:mb-16">
                 <Link href="/" className="mb-8 inline-block">
+                  {/* Logo de texto para Vértice Agency */}
+                  <div className="text-black text-3xl font-bold dark:text-white">
+                    Vértice Agency
+                  </div>
+                  {/* Si prefieres usar una imagen para el logo en el footer,
+                      puedes descomentar y ajustar las siguientes líneas:
                   <Image
-                    src="/images/logo/logo-2.svg"
-                    alt="logo"
+                    src="/images/logo/logo-dark.svg" // Ruta para logo en modo claro
+                    alt="Vértice Agency Logo"
                     className="w-full dark:hidden"
                     width={140}
                     height={30}
                   />
                   <Image
-                    src="/images/logo/logo.svg"
-                    alt="logo"
+                    src="/images/logo/logo-light.svg" // Ruta para logo en modo oscuro
+                    alt="Vértice Agency Logo"
                     className="hidden w-full dark:block"
                     width={140}
                     height={30}
                   />
+                  */}
                 </Link>
                 <p className="mb-9 text-base leading-relaxed text-body-color dark:text-body-color-dark">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer lobortis.
+                  Ayudamos a emprendedores digitales y creadores de contenido a escalar su negocio con marketing estratégico e inteligencia artificial.
                 </p>
+                {/* Enlaces a Redes Sociales */}
+                {/* Puedes reemplazar estos SVGs con iconos reales de tus redes y actualizar los href */}
                 <div className="flex items-center">
                   <a
-                    href="/"
+                    href="https://facebook.com/verticeagency" // Reemplaza con tu Facebook
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
+                    {/* Icono de Facebook (ejemplo, puedes usar SVG de Facebook) */}
                     <svg
                       width="18"
                       height="18"
@@ -52,12 +65,13 @@ const Footer = () => {
                     </svg>
                   </a>
                   <a
-                    href="/"
+                    href="https://twitter.com/verticeagency" // Reemplaza con tu Twitter/X
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
+                    {/* Icono de Twitter/X (ejemplo) */}
                     <svg
                       width="18"
                       height="18"
@@ -74,12 +88,13 @@ const Footer = () => {
                     </svg>
                   </a>
                   <a
-                    href="/"
+                    href="https://youtube.com/verticeagency" // Reemplaza con tu YouTube
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
+                    {/* Icono de YouTube (ejemplo) */}
                     <svg
                       width="18"
                       height="14"
@@ -90,12 +105,13 @@ const Footer = () => {
                     </svg>
                   </a>
                   <a
-                    href="/"
+                    href="https://linkedin.com/company/verticeagency" // Reemplaza con tu LinkedIn de empresa
                     aria-label="social-link"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
+                    {/* Icono de LinkedIn (ejemplo) */}
                     <svg
                       width="17"
                       height="16"
@@ -109,12 +125,29 @@ const Footer = () => {
               </div>
             </div>
 
+            {/* Columna "Enlaces Útiles" */}
             <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
               <div className="mb-12 lg:mb-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
-                  Useful Links
+                  Enlaces Útiles
                 </h2>
                 <ul>
+                  <li>
+                    <Link
+                      href="/servicios"
+                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    >
+                      Servicios
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/nosotros"
+                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
+                    >
+                      Nosotros
+                    </Link>
+                  </li>
                   <li>
                     <Link
                       href="/blog"
@@ -123,88 +156,66 @@ const Footer = () => {
                       Blog
                     </Link>
                   </li>
-                  <li>
-                    <Link
-                      href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
-                    >
-                      Pricing
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/about"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
-                    >
-                      About
-                    </Link>
-                  </li>
                 </ul>
               </div>
             </div>
 
+            {/* Columna "Políticas" */}
             <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
               <div className="mb-12 lg:mb-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
-                  Terms
+                  Políticas
                 </h2>
                 <ul>
                   <li>
                     <Link
-                      href="/"
+                      href="/politica-privacidad" // Crea esta página si la necesitas
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
-                      TOS
+                      Política de Privacidad
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/"
+                      href="/terminos-servicio" // Crea esta página si la necesitas
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
-                      Privacy Policy
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/"
-                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
-                    >
-                      Refund Policy
+                      Términos de Servicio
                     </Link>
                   </li>
                 </ul>
               </div>
             </div>
 
+            {/* Columna "Soporte y Ayuda" */}
             <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-3/12">
               <div className="mb-12 lg:mb-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
-                  Support & Help
+                  Soporte y Ayuda
                 </h2>
                 <ul>
                   <li>
                     <Link
-                      href="/contact"
+                      href="/contacto"
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
-                      Open Support Ticket
+                      Contactar Soporte
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="/"
+                    <a // Usamos <a> para enlaces que podrían ir a recursos externos
+                      href="mailto:soporte@verticeagency.com" // Email de soporte
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
-                      Terms of Use
-                    </Link>
+                      Enviar Correo
+                    </a>
                   </li>
                   <li>
                     <Link
-                      href="/about"
+                      href="/nosotros" // Enlace a "Nosotros" si quieres repetir
                       className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
-                      About
+                      Conócenos
                     </Link>
                   </li>
                 </ul>
@@ -215,7 +226,9 @@ const Footer = () => {
           <div className="h-px w-full bg-linear-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
           <div className="py-8">
             <p className="text-center text-base text-body-color dark:text-white">
-              Template by{" "}
+              Copyright &copy; {currentYear} Vértice Agency. Todos los derechos reservados.
+              <br />
+              Plantilla base por{" "}
               <a
                 href="http://uideck.com"
                 target="_blank"
@@ -224,7 +237,7 @@ const Footer = () => {
               >
                 UIdeck
               </a>{" "}
-              and{" "}
+              y{" "}
               <a
                 href="https://nextjstemplates.com"
                 target="_blank"
@@ -236,6 +249,7 @@ const Footer = () => {
             </p>
           </div>
         </div>
+        {/* SVGs de fondo se mantienen */}
         <div className="absolute right-0 top-14 z-[-1]">
           <svg
             width="55"

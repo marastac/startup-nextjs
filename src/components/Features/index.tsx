@@ -1,6 +1,7 @@
+// src/components/Features/index.tsx
 import SectionTitle from "../Common/SectionTitle";
 import SingleFeature from "./SingleFeature";
-import featuresData from "./featuresData";
+import featuresData from "./featuresData"; // Lo modificaremos a continuación
 
 const Features = () => {
   return (
@@ -8,8 +9,8 @@ const Features = () => {
       <section id="features" className="py-16 md:py-20 lg:py-28">
         <div className="container">
           <SectionTitle
-            title="Main Features"
-            paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+            title="Nuestros Servicios Impulsados por IA" // Nuevo título
+            paragraph="Potenciamos tu negocio con soluciones de marketing digital estratégicas y automatizadas, diseñadas para emprendedores digitales y creadores de contenido." // Nuevo párrafo
             center
           />
 

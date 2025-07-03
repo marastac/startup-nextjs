@@ -1,3 +1,4 @@
+// src/components/Header/index.tsx
 "use client";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,7 +29,7 @@ const Header = () => {
 
   // submenu handler
   const [openIndex, setOpenIndex] = useState(-1);
-  const handleSubmenu = (index) => {
+  const handleSubmenu = (index: number) => {
     if (openIndex === index) {
       setOpenIndex(-1);
     } else {
@@ -52,24 +53,22 @@ const Header = () => {
             <div className="w-60 max-w-full px-4 xl:mr-12">
               <Link
                 href="/"
-                className={`header-logo block w-full ${
+                className={`header-logo block w-full flex items-center gap-2 ${ // Añadido gap-2 para espacio entre logo e texto
                   sticky ? "py-5 lg:py-2" : "py-8"
                 } `}
               >
+                {/* INICIO: TU LOGO SVG */}
                 <Image
-                  src="/images/logo/logo-2.svg"
-                  alt="logo"
-                  width={140}
-                  height={30}
-                  className="w-full dark:hidden"
+                  src="/images/logo/vertice-agency-logo.svg" // <<-- ¡CAMBIA ESTA RUTA POR LA RUTA EXACTA DE TU LOGO SVG!
+                  alt="Vértice Agency Logo"
+                  width={60} // Ajusta el ancho para el logo, es el tamaño del icono
+                  height={60} // Ajusta la altura
+                  className="h-auto object-contain dark:invert" // dark:invert para que logos oscuros se vean blancos en modo noche
                 />
-                <Image
-                  src="/images/logo/logo.svg"
-                  alt="logo"
-                  width={140}
-                  height={30}
-                  className="hidden w-full dark:block"
-                />
+                {/* FIN: TU LOGO SVG */}
+
+                {/* Logo de texto: text-black para modo día, dark:text-white para modo noche */}
+                <div className="text-black dark:text-white text-xl font-bold">Vértice Agency</div>
               </Link>
             </div>
             <div className="flex w-full items-center justify-between px-4">
@@ -141,10 +140,10 @@ const Header = () => {
                                 openIndex === index ? "block" : "hidden"
                               }`}
                             >
-                              {menuItem.submenu.map((submenuItem, index) => (
+                              {menuItem.submenu.map((submenuItem, subIndex) => (
                                 <Link
                                   href={submenuItem.path}
-                                  key={index}
+                                  key={subIndex}
                                   className="text-dark hover:text-primary block rounded-sm py-2.5 text-sm lg:px-3 dark:text-white/70 dark:hover:text-white"
                                 >
                                   {submenuItem.title}
@@ -159,18 +158,6 @@ const Header = () => {
                 </nav>
               </div>
               <div className="flex items-center justify-end pr-16 lg:pr-0">
-                <Link
-                  href="/signin"
-                  className="text-dark hidden px-7 py-3 text-base font-medium hover:opacity-70 md:block dark:text-white"
-                >
-                  Sign In
-                </Link>
-                <Link
-                  href="/signup"
-                  className="ease-in-up shadow-btn hover:shadow-btn-hover bg-primary hover:bg-primary/90 hidden rounded-xs px-8 py-3 text-base font-medium text-white transition duration-300 md:block md:px-9 lg:px-6 xl:px-9"
-                >
-                  Sign Up
-                </Link>
                 <div>
                   <ThemeToggler />
                 </div>

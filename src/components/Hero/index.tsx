@@ -1,3 +1,4 @@
+// src/components/Hero/index.tsx
 import Link from "next/link";
 
 const Hero = () => {
@@ -11,33 +12,39 @@ const Hero = () => {
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
               <div className="mx-auto max-w-[800px] text-center">
+                {/* Título Principal */}
                 <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-                  Free and Open-Source Next.js Template for Startup & SaaS
+                  Escala tu Negocio Online:{" "}
+                  <span className="bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">
+                    Marketing Digital con IA
+                  </span>{" "}
+                  para Emprendedores y Creadores de Contenido en{" "}
+                  <strong className="text-white">Perú y España</strong>.
                 </h1>
+                {/* Subtítulo/Descripción */}
                 <p className="mb-12 text-base leading-relaxed! text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
-                  Startup is free Next.js template for startups and SaaS
-                  business websites comes with all the essential pages,
-                  components, and sections you need to launch a complete
-                  business website, built-with Next 13.x and Tailwind CSS.
+                  En Vértice Agency, potenciamos tu marca digital con estrategias de marketing innovadoras y soluciones de Inteligencia Artificial. Ayudamos a Coaches, Consultores y Creadores de Infoproductos a maximizar su visibilidad online, generar leads cualificados y automatizar procesos clave. Nuestro enfoque garantiza contenido de alto impacto, campañas publicitarias de alta conversión y una eficiencia sin precedentes. Atendemos a clientes en Perú y España, adaptándonos a las particularidades de cada mercado.
                 </p>
+                {/* Botones de Llamada a la Acción */}
                 <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
-                    href="https://nextjstemplates.com/templates/saas-starter-startup"
+                    href="/contacto" // Enlace al formulario de contacto
                     className="rounded-xs bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
                   >
-                    🔥 Get Pro
+                    Agenda tu Mini-Auditoría Gratuita con IA
                   </Link>
                   <Link
-                    href="https://github.com/NextJSTemplates/startup-nextjs"
+                    href="/servicios" // Enlace a la sección o página de servicios
                     className="inline-block rounded-xs bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
                   >
-                    Star on GitHub
+                    Descubre Cómo la IA Impulsa tu Crecimiento
                   </Link>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        {/* Los SVG de los círculos de fondo se mantienen */}
         <div className="absolute right-0 top-0 z-[-1] opacity-30 lg:opacity-100">
           <svg
             width="450"
